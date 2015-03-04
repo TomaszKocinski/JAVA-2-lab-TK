@@ -62,8 +62,11 @@ public class Automat {
         if (temp > 0) {
             price = 1.80;
         }
-        temp = arg_mon[0].getWartosc() - price;
-
+        temp=0;
+        for(int i=0;i<arg_mon.length;i++){
+        temp += arg_mon[i].getWartosc();
+        }
+        temp = temp - price;
         int price_int = (int) Math.round(price * 100);
         while (price_int >= 500) {
             price_int -= 500;
